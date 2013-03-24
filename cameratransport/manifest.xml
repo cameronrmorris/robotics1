@@ -1,0 +1,15 @@
+<package>
+  <description brief="cameratransport">
+
+     cameratransport
+
+  </description>
+  <author>Cameron Morris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cameratransport</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
