@@ -78,15 +78,15 @@ CMakeFiles/my_subscriber.dir/src/test.cpp.o: /opt/ros/groovy/share/opencv2/packa
 CMakeFiles/my_subscriber.dir/src/test.cpp.o: /opt/ros/groovy/share/cv_bridge/package.xml
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/my_subscriber.dir/src/test.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/my_subscriber.dir/src/test.cpp.o -c /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/my_subscriber.dir/src/test.cpp.o -c /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp
 
 CMakeFiles/my_subscriber.dir/src/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_subscriber.dir/src/test.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp > CMakeFiles/my_subscriber.dir/src/test.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp > CMakeFiles/my_subscriber.dir/src/test.cpp.i
 
 CMakeFiles/my_subscriber.dir/src/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_subscriber.dir/src/test.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp -o CMakeFiles/my_subscriber.dir/src/test.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp -o CMakeFiles/my_subscriber.dir/src/test.cpp.s
 
 CMakeFiles/my_subscriber.dir/src/test.cpp.o.requires:
 .PHONY : CMakeFiles/my_subscriber.dir/src/test.cpp.o.requires

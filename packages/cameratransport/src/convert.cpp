@@ -17,10 +17,11 @@ public:
   ImageConverter()
     : it_(nh_)
   {
+
     image_pub_ = it_.advertise("/image_converted", 1);
     image_sub_ = it_.subscribe("/image_raw", 1, &ImageConverter::imageCb, this);
 
-
+    nh_.setParam("image_converted/compressed/jpeg_quality", 10);
   }
 
   ~ImageConverter()
@@ -48,7 +49,7 @@ public:
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "imageconverter");
+  ros::init(argc, argv, "imageconverter");  
 
   ImageConverter ic;	
   ros::spin();

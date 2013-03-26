@@ -6,5 +6,5 @@ CXX_FLAGS = -O2 -g -I/home/cam/school/robotics1/rover/robotics1/packages/camerat
 
 CXX_DEFINES = 
 
-# TARGET_FLAGS = -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread
+# TARGET_FLAGS = -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread
 

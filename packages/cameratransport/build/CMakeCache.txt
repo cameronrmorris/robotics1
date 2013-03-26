@@ -253,7 +253,7 @@ _CATKIN_GTEST_INCLUDE:FILEPATH=_CATKIN_GTEST_INCLUDE-NOTFOUND
 _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Path to a file.
-_file_name:FILEPATH=/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/test.cpp
+_file_name:FILEPATH=/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/src/convert.cpp
 
 //Value Computed by CMake
 cameratransport_BINARY_DIR:STATIC=/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build

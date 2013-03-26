@@ -192,17 +192,30 @@ doxygen/fast:
 .PHONY : doxygen/fast
 
 #=============================================================================
-# Target rules for targets named my_subscriber
+# Target rules for targets named imageconverter
 
 # Build rule for target.
-my_subscriber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 my_subscriber
-.PHONY : my_subscriber
+imageconverter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imageconverter
+.PHONY : imageconverter
 
 # fast build rule for target.
-my_subscriber/fast:
-	$(MAKE) -f CMakeFiles/my_subscriber.dir/build.make CMakeFiles/my_subscriber.dir/build
-.PHONY : my_subscriber/fast
+imageconverter/fast:
+	$(MAKE) -f CMakeFiles/imageconverter.dir/build.make CMakeFiles/imageconverter.dir/build
+.PHONY : imageconverter/fast
+
+#=============================================================================
+# Target rules for targets named imagedisplay
+
+# Build rule for target.
+imagedisplay: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imagedisplay
+.PHONY : imagedisplay
+
+# fast build rule for target.
+imagedisplay/fast:
+	$(MAKE) -f CMakeFiles/imagedisplay.dir/build.make CMakeFiles/imagedisplay.dir/build
+.PHONY : imagedisplay/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_clean-test-results
@@ -386,29 +399,53 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/test.o: src/test.cpp.o
-.PHONY : src/test.o
+src/convert.o: src/convert.cpp.o
+.PHONY : src/convert.o
 
 # target to build an object file
-src/test.cpp.o:
-	$(MAKE) -f CMakeFiles/my_subscriber.dir/build.make CMakeFiles/my_subscriber.dir/src/test.cpp.o
-.PHONY : src/test.cpp.o
+src/convert.cpp.o:
+	$(MAKE) -f CMakeFiles/imageconverter.dir/build.make CMakeFiles/imageconverter.dir/src/convert.cpp.o
+.PHONY : src/convert.cpp.o
 
-src/test.i: src/test.cpp.i
-.PHONY : src/test.i
+src/convert.i: src/convert.cpp.i
+.PHONY : src/convert.i
 
 # target to preprocess a source file
-src/test.cpp.i:
-	$(MAKE) -f CMakeFiles/my_subscriber.dir/build.make CMakeFiles/my_subscriber.dir/src/test.cpp.i
-.PHONY : src/test.cpp.i
+src/convert.cpp.i:
+	$(MAKE) -f CMakeFiles/imageconverter.dir/build.make CMakeFiles/imageconverter.dir/src/convert.cpp.i
+.PHONY : src/convert.cpp.i
 
-src/test.s: src/test.cpp.s
-.PHONY : src/test.s
+src/convert.s: src/convert.cpp.s
+.PHONY : src/convert.s
 
 # target to generate assembly for a file
-src/test.cpp.s:
-	$(MAKE) -f CMakeFiles/my_subscriber.dir/build.make CMakeFiles/my_subscriber.dir/src/test.cpp.s
-.PHONY : src/test.cpp.s
+src/convert.cpp.s:
+	$(MAKE) -f CMakeFiles/imageconverter.dir/build.make CMakeFiles/imageconverter.dir/src/convert.cpp.s
+.PHONY : src/convert.cpp.s
+
+src/display.o: src/display.cpp.o
+.PHONY : src/display.o
+
+# target to build an object file
+src/display.cpp.o:
+	$(MAKE) -f CMakeFiles/imagedisplay.dir/build.make CMakeFiles/imagedisplay.dir/src/display.cpp.o
+.PHONY : src/display.cpp.o
+
+src/display.i: src/display.cpp.i
+.PHONY : src/display.i
+
+# target to preprocess a source file
+src/display.cpp.i:
+	$(MAKE) -f CMakeFiles/imagedisplay.dir/build.make CMakeFiles/imagedisplay.dir/src/display.cpp.i
+.PHONY : src/display.cpp.i
+
+src/display.s: src/display.cpp.s
+.PHONY : src/display.s
+
+# target to generate assembly for a file
+src/display.cpp.s:
+	$(MAKE) -f CMakeFiles/imagedisplay.dir/build.make CMakeFiles/imagedisplay.dir/src/display.cpp.s
+.PHONY : src/display.cpp.s
 
 # Help Target
 help:
@@ -421,11 +458,12 @@ help:
 	@echo "... clean_test_results"
 	@echo "... doxygen"
 	@echo "... edit_cache"
+	@echo "... imageconverter"
+	@echo "... imagedisplay"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... my_subscriber"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
@@ -441,9 +479,12 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... src/test.o"
-	@echo "... src/test.i"
-	@echo "... src/test.s"
+	@echo "... src/convert.o"
+	@echo "... src/convert.i"
+	@echo "... src/convert.s"
+	@echo "... src/display.o"
+	@echo "... src/display.i"
+	@echo "... src/display.s"
 .PHONY : help
 
 

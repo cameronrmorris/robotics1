@@ -4,7 +4,8 @@
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/doxygen.dir
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/gtest/CMakeFiles/gtest.dir
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/gtest/CMakeFiles/gtest_main.dir
-/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/my_subscriber.dir
+/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/imageconverter.dir
+/home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/imagedisplay.dir
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/rosbuild_clean-test-results.dir
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/rosbuild_precompile.dir
 /home/cam/school/robotics1/rover/robotics1/packages/cameratransport/build/CMakeFiles/rosbuild_premsgsrvgen.dir
