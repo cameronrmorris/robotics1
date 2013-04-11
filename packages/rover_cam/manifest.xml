@@ -1,0 +1,14 @@
+<package>
+  <description brief="rover_cam">
+
+     rover_cam
+
+  </description>
+  <author>CS Robot</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rover_cam</url>
+
+</package>
+
+
