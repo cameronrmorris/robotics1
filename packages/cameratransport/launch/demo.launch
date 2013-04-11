@@ -1,11 +1,11 @@
 <launch>
-  <arg name="plugin" default="compressed" />
+  <arg name="plugin" default="theora" />
   <node pkg="cameratransport" type="imageconverter" name="converter" >
     <param name="jpeg_quality" value="10" />
   </node>
  <node pkg="cameratransport" type="imagedisplay" name="display" output="screen" >
     <param name="image_transport" value="$(arg plugin)" />
   </node> 
-  <node name="dynamic_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
+  <node name="dynamic_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" respawn="true" />
 </launch>
 
