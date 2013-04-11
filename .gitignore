@@ -15,3 +15,5 @@
 # ROS
 setup.*
 .rosinstall
+build
+bin
