@@ -25,12 +25,19 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
 
 int main(int argc, char **argv)
 {
+  
+  if ( argc < 2 ) {
+
+    printf( "Usage: imagedisplay <topic>\n" );
+    return 0;
+  }
+  
   ros::init(argc, argv, "imagedisplay");
   ros::NodeHandle nh;
   cvNamedWindow("view");
   cvStartWindowThread();
   image_transport::ImageTransport it(nh);
-  image_transport::Subscriber sub = it.subscribe("/image_converted", 1, imageCallback);
+  image_transport::Subscriber sub = it.subscribe(argv[1], 1, imageCallback);
   ros::spin();
   cvDestroyWindow("view");
 }

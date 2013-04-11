@@ -4,6 +4,7 @@
 #include <opencv/highgui.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
+#include <stdio.h>
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -14,14 +15,12 @@ class ImageConverter
   image_transport::Subscriber image_sub_;
   image_transport::Publisher image_pub_;
 public:
-  ImageConverter()
+  ImageConverter(char publisher_name[32], char usb_source[32] )
     : it_(nh_)
   {
 
-    image_pub_ = it_.advertise("/image_converted", 1);
-    image_sub_ = it_.subscribe("/image_raw", 1, &ImageConverter::imageCb, this);
-
-    nh_.setParam("image_converted/compressed/jpeg_quality", 10);
+    image_pub_ = it_.advertise( publisher_name, 1 );
+    image_sub_ = it_.subscribe( usb_source, 1, &ImageConverter::imageCb, this );
   }
 
   ~ImageConverter()
@@ -49,8 +48,18 @@ public:
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "imageconverter");  
+  char buf[32];
 
-  ImageConverter ic;	
+  if ( argc < 3 ) {
+
+    printf( "Usage: imageconvert <id> <usb_source>\n" );
+    
+    return 0;
+
+  }
+  ros::init(argc, argv, "imageconverter");  
+  sprintf( buf,  "/image_compressed%s", argv[1] ) ;
+  printf( "SOURCE=%s DESTINATION=%s\n", argv[2], buf );
+  ImageConverter ic(buf, argv[2]); 	
   ros::spin();
 }
