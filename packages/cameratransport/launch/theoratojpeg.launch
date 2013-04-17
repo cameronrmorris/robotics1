@@ -1,0 +1,13 @@
+<launch>
+  <arg name="plugin" default="compressed" />
+  <arg name="pubname" default="2" />
+  <arg name="usb_device" default="/image_compressed1/" />
+  <arg name="compressed_source" default="/image_compressed2" />
+
+  <node pkg="cameratransport" type="imageconverter" name="converterjpeg" args="$(arg pubname) $(arg usb_device)"  />
+ <node pkg="cameratransport" type="imagedisplay" name="displayjpeg" output="screen" args="$(arg compressed_source)" >
+    <param name="image_transport" value="$(arg plugin)" />
+  </node> 
+  <node name="dynamic_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" respawn="true" />
+</launch>
+
