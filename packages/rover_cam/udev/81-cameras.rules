@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0821", ATTRS{serial}=="74898A00", NAME="camera1", SYMLINK+="cameras/camera1", MODE="666"
+
