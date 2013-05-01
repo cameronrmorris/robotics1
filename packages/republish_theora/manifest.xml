@@ -1,0 +1,14 @@
+<package>
+  <description brief="republish_theora">
+
+     republish_theora
+
+  </description>
+  <author>Cameron Morris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/republish_theora</url>
+  <depend package="roscpp"/>
+</package>
+
+
