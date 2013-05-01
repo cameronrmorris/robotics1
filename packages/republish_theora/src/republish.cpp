@@ -3,12 +3,12 @@
 #include <sys/types.h>
 #include <signal.h>
 
-int n = 0;
+int flag = 5;
 
 void messageCallBack( const sensor_msgs::CompressedImage::ConstPtr& msg ) {
 
   ROS_INFO( "Message detected\n");
-  n = 5;
+  flag = 5;
 
 }
 
@@ -49,17 +49,22 @@ int main( int argc, char *argv[] ) {
     
     ros::Rate loop_rate(10);
 
+    //   sleep(5000);
+
     while( ros::ok() ) {
 
       ros::spinOnce();
-      n = n - 1;
+      flag--;
 
       // Probably not working, KILL THYSELF
-      if( n < 0 ) {
+      if( flag < 0 ) {
 	
+	ROS_INFO( "KILLING REPUBLISHER\n");
 	// Kill child
-	kill(pid, SIGTERM);
+	//	kill(pid, SIGTERM);
 	
+	wait();
+	exit(-1);
 
       }
       loop_rate.sleep();
