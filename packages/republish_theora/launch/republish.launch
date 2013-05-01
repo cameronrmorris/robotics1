@@ -1,0 +1,8 @@
+<launch>
+  <arg name="intopic" default="/image_raw1" />
+  <arg name="outtopic" default="/test" />
+  <arg name="outplugin" default="compressed" />
+
+  <node pkg="republish_theora" type="republish_theora" args="$(arg intopic) $(arg outtopic) $(arg outplugin)" name="uirepublisher" respawn="true" />
+  
+</launch>

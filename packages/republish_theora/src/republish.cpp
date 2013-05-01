@@ -1,12 +1,12 @@
 #include <ros/ros.h>
-#include <sensor_msgs/CompressedImage.h>
+#include <image_transport/image_transport.h>
 #include <sys/types.h>
 #include <signal.h>
 #include <time.h>
 
 time_t last_seen;
 
-void messageCallBack( const sensor_msgs::CompressedImage::ConstPtr& msg ) {
+void messageCallBack( const sensor_msgs::ImageConstPtr& msg ) {
 
   ROS_INFO( "Message detected\n");
   time(&last_seen);
@@ -33,7 +33,7 @@ int main( int argc, char *argv[] ) {
   case 0: // Republisher
     
     sprintf( in_topic, "in:=%s", argv[1] );
-    sprintf( out_topic, "out=%s", argv[2] );
+    sprintf( out_topic, "out:=%s", argv[2] );
     execlp("rosrun", "rosrun", "image_transport", "republish", "theora",
 	   in_topic, argv[3], out_topic, NULL );
 
@@ -49,7 +49,8 @@ int main( int argc, char *argv[] ) {
     ros::init(argc, argv, "republish_monitor" );
     time_t current;
     ros::NodeHandle n;
-    ros::Subscriber sub = n.subscribe( argv[2], 10, messageCallBack );
+    image_transport::ImageTransport it(n);
+    image_transport::Subscriber sub = it.subscribe( argv[2], 10, messageCallBack );
     
     ros::Rate loop_rate(10);
 
