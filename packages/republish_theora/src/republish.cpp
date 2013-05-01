@@ -20,7 +20,7 @@ int main( int argc, char *argv[] ) {
   char out_topic[32];
 
   if( argc < 2 ) {
-    ROS_INFO("Usage: republish_theora <in topic> <out topic> <out plugin>\n");
+    ROS_INFO("Usage: republish_theora <in topic> <out topic> <out plugin> <timeout>\n");
 
     return 0;
   }
@@ -35,7 +35,7 @@ int main( int argc, char *argv[] ) {
     sprintf( in_topic, "in:=%s", argv[1] );
     sprintf( out_topic, "out:=%s", argv[2] );
     execlp("rosrun", "rosrun", "image_transport", "republish", "theora",
-	   in_topic, argv[3], out_topic, NULL );
+	   in_topic, argv[3], out_topic, "_name=republish_child", NULL );
 
     perror("execlp");
     exit(1);
@@ -43,9 +43,12 @@ int main( int argc, char *argv[] ) {
   default: // Monitor
 
     time( &last_seen );
-    sleep( 1 );
 
     ROS_INFO( "Created republisher node with pid : %d", pid );
+    ROS_INFO( "Checking for alive every %d seconds", atoi( argv[4] ) );
+    
+    sleep( 5 ) ;
+
     ros::init(argc, argv, "republish_monitor" );
     time_t current;
     ros::NodeHandle n;
@@ -63,7 +66,7 @@ int main( int argc, char *argv[] ) {
       ROS_INFO( "Last seen: %f seconds ago", difftime( current, last_seen ) );
 
       // Probably not working, KILL THYSELF
-      if( difftime( current, last_seen) > 5 ) {
+      if( difftime( current, last_seen) > atoi(argv[4] ) ) {
 	
 	ROS_INFO( "KILLING REPUBLISHER\n");
 	// Kill child
