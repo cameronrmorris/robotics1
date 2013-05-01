@@ -9,6 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/republish_theora</url>
   <depend package="roscpp"/>
+  <depend package="image_transport"/>
 </package>
 
 
