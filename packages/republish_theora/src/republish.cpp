@@ -73,6 +73,7 @@ int main( int argc, char *argv[] ) {
 	kill(pid, SIGTERM);
 	
 	wait();
+	ros::shutdown();
 	exit(-1);
 
       }
