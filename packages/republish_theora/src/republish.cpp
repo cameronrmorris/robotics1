@@ -70,7 +70,7 @@ int main( int argc, char *argv[] ) {
 	
 	ROS_INFO( "KILLING REPUBLISHER\n");
 	// Kill child
-	kill(pid, SIGTERM);
+	kill(pid, SIGINT);
 	
 	wait();
 	ros::shutdown();
