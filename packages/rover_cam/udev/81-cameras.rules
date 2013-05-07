@@ -1,2 +1,4 @@
 SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0821", ATTRS{serial}=="74898A00", NAME="camera1", SYMLINK+="cameras/camera1", MODE="666"
-
+SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0821", ATTRS{serial}=="32059A00", NAME="camera2", SYMLINK+="cameras/camera2", MODE="666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0821", ATTRS{serial}=="DAE549D0", NAME="camera3", SYMLINK+="cameras/camera3", MODE="666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0821", ATTRS{serial}=="0F449A00", NAME="camera4", SYMLINK+="cameras/camera4", MODE="666"
